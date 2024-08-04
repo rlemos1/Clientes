@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favoritos</title>
+</head>
+<body>
+    <h1>Favoritos</h1>
+    <ul>
+        {% for favorite in favorites %}
+        <li>
+            <img src="{{ favorite.url }}" alt="Imagem do cachorro" style="width: 200px; height: auto;">
+            <form action="/remove_favorite/{{ loop.index0 }}" method="post" style="display: inline;">
+                <button type="submit">Remover</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+    <form action="/add_favorite" method="post">
+        <input type="text" name="url" placeholder="URL da imagem do cachorro">
+        <button type="submit">Adicionar Favorito</button>
+    </form>
+</body>
+</html>

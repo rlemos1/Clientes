@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorites</title>
+</head>
+<body>
+    <h1>Favorites</h1>
+    <form action="/add" method="post">
+        <input type="text" name="url" placeholder="Enter image URL" required>
+        <button type="submit">Add Favorite</button>
+    </form>
+    <h2>Favorite Images:</h2>
+    <ul>
+        {% for favorite in favorites %}
+            <li><a href="{{ favorite.url }}" target="_blank">{{ favorite.url }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
