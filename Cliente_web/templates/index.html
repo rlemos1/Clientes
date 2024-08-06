@@ -14,7 +14,9 @@
     <h2>Favorite Images:</h2>
     <ul>
         {% for favorite in favorites %}
-            <li><a href="{{ favorite.url }}" target="_blank">{{ favorite.url }}</a></li>
+            <li>
+                <img src="{{ favorite.url }}" alt="Favorite Image" style="width: 200px; height: auto;">
+            </li>
         {% endfor %}
     </ul>
 </body>
